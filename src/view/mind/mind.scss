@@ -1,0 +1,173 @@
+.mind{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    // overflow: hidden;
+    .container{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        margin:0;
+        overflow: hidden;
+        .tool_nav{
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            z-index: 1000;
+            .tool_item{
+                display:inline-block;
+                position: relative;
+                width: 32px;
+                height: 32px;
+                margin-right: 10px;
+                transition: all .5s;
+                border-radius: 50%;
+                cursor: pointer;
+                &:hover{
+                    background-color: #fff;
+                    .tool_add{                    
+                        background-image: url('../../assets/images/add_hover.svg');                 
+                    }
+                    .tool_line{              
+                        background-image: url('../../assets/images/line_hover.svg');                  
+                    }
+                }
+                .tool_icon{
+                    width: 22px;
+                    height: 22px;
+                    background-size: 100% 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
+                .tool_add{                    
+                    background-image: url('../../assets/images/add.svg');                 
+                }
+                .tool_line{              
+                    background-image: url('../../assets/images/line.svg');                  
+                }
+                
+            }
+            .active{
+                background-color: #fff;
+                .tool_line{              
+                    background-image: url('../../assets/images/line_hover.svg');                  
+                }
+            }
+            .operate_zoom{
+                display: inline-block;
+                font-size: 0;
+                .tool_item{
+                    margin: 0;
+                    .tool_zoomout{
+                        background-image: url('../../assets/images/zoomout.svg');
+                    }
+                    .tool_zoomin{
+                        background-image: url('../../assets/images/zoomin.svg');
+                    }
+                }        
+                .scale_data{
+                    display: inline-block;
+                    font-size: 14px;
+                    color: #6E747D;
+                    padding: 0 5px;
+                    vertical-align: top;
+                    line-height: 32px;
+                }
+            }
+        }
+        .stage{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #f0f2f5 100%;
+            overflow: hidden;
+            .stage_base{
+                .box_wrapper{
+                    z-index: 10;
+                    .box_item{
+                        display: inline-block;
+                        position: absolute;
+                        // width: 100px;
+                        // height: 100px;
+                        // line-height: 100px;
+                        background: #333;
+                        color: #fff;
+                        text-align: center;
+                        box-shadow: 0 2px 2px 0 rgba(40, 120, 255, 0.1), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+                        user-select: none;
+                        box-sizing: border-box;
+                        &:hover{
+                            box-shadow: 0 3px 14px 3px rgba(40, 120, 255, 0.08), 0 8px 10px 1px rgba(0, 0, 0, 0.05)
+                        }
+                    }
+                    .box_item_selected{
+                        outline: rgb(62, 147, 255) solid 3px;
+                    }
+                }
+                .line_wrapper{
+                    z-index: 1;
+                    .line_box{
+                        display: inline-block;
+                        position: absolute;
+                        // outline: 2px dashed rgba(0, 0, 0, 0.12);
+                        z-index: -1;
+                    }
+                    .line_body{
+                        marker-end: url(#Triangle);
+                        stroke:#ccc;
+                        &:hover{
+                            marker-end: url(#TriangleHover);
+                            stroke: #7EAEFF;
+                            stroke-width: 6px;
+                        }
+                    }
+                    .selected{
+                        marker-end: url(#TriangleSelect);
+                        stroke: #2878ff;
+                    }
+                }
+            }
+        }
+        .right_click_menu{
+            width: 150px;
+            position: fixed;
+            .disable{
+                color: rgba(0, 0, 0, 0.38);
+                cursor: not-allowed;
+            }
+        }
+    }
+    .form_item{
+        display: block;   
+        padding: 10px 0;
+        .form_name{
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .form_value{
+            display: inline-block;
+            width:360px;
+            vertical-align: middle;
+            .error_tips{
+                color: #ff0000;
+                font-size: 12px;
+                margin: 0;
+                transition: all 0.3s;
+                padding-top:10px;
+            }
+        }
+    }
+}
