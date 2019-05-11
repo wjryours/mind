@@ -35,8 +35,7 @@ const getPublicUrl = appPackageJson =>
 function getServedPath(appPackageJson) {
   const publicUrl = getPublicUrl(appPackageJson);
   const servedUrl =
-    // envPublicUrl || (publicUrl ? url.parse(publicUrl).pathname : '//static.maimiaotech.com/assets/mxz/');
-    envPublicUrl || (publicUrl ? url.parse(publicUrl).pathname : process.env.PRODUCTION_TEST==='buildtest'?'//test-static.maixiaozhi.com/client/':(process.env.PRODUCTION_TEST==='buildprod'?'//static.maixiaozhi.com/client/':'/build/'));
+    envPublicUrl || (publicUrl ? url.parse(publicUrl).pathname : '//static.wjryours.tech/example/');
   return ensureSlash(servedUrl, true);
 }
 
