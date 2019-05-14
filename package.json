@@ -82,7 +82,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "upload":"gulp upload",
+    "deploy":"node scripts/build.js && yarn upload"
   },
   "eslintConfig": {
     "extends": "react-app"
