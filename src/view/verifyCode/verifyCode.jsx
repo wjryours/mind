@@ -80,6 +80,7 @@ class VerifyCode extends React.Component {
     initOriginImageDom = (callback) => {
         let image = document.createElement('img')
         image.src = VerifyBg
+        image.crossOrigin = ""
         image.onload = () => {
             this.setState({
                 originImageDom: image

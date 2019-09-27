@@ -35,13 +35,13 @@
     "gulp": "^3.9.1",
     "gulp-sftp": "^0.1.5",
     "html-webpack-plugin": "4.0.0-alpha.2",
-    "iconv-lite": "^0.4.24",
+    "iconv-lite": "^0.5.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "23.6.0",
     "jest-pnp-resolver": "1.0.1",
     "jest-resolve": "23.6.0",
     "js-cookie": "^2.2.0",
-    "koa": "^2.7.0",
+    "koa": "^2.8.1",
     "koa-router": "^7.4.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
@@ -83,8 +83,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "upload":"gulp upload",
-    "deploy":"node scripts/build.js && yarn upload"
+    "upload": "gulp upload",
+    "deploy": "node scripts/build.js && yarn upload"
   },
   "eslintConfig": {
     "extends": "react-app"
