@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.scss'
-import { LocaleProvider } from 'antd'
+import { ConfigProvider } from 'antd'
 import zh_CN from 'antd/lib/locale-provider/zh_CN'
 import * as serviceWorker from './serviceWorker'
 import 'react-app-polyfill/ie9'
-import Mind from './view/mind/mind'
+import Router from './router/router'
 ReactDOM.render(  
-    <LocaleProvider locale={zh_CN}>
-        <Mind></Mind>
-    </LocaleProvider>      
+    <ConfigProvider locale={zh_CN}>
+        <Router></Router>
+    </ConfigProvider>      
 , document.getElementById('root'))
 
 // If you want your app to work offline and load faster, you can change

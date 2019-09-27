@@ -1,0 +1,64 @@
+@mixin verifyBackground() {
+    background:url('../../assets/images/verifycode_sprite.png')no-repeat;
+}
+@mixin canvas(){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.verify_main{
+    padding: 50px;
+}
+.verify_container{
+    position: relative;
+    width: 280px;
+    height: 350px;
+    box-shadow: 0 0 10px #ccc;
+    border: 1px solid #ccc;
+    background: #fff;
+    
+    .verify_box{
+        position: relative;
+        width: 260px;
+        height: 195px;
+        margin: 10px auto 0;
+        .verify_canvas_origin{
+            @include canvas();
+        }
+        .verify_canvas{
+            @include canvas();
+        }
+        .verify_canvas_puzzle{
+            @include canvas();
+        }
+    }
+    .verify_slide{
+        position: relative;
+        width: 260px;
+        height: 40px;
+        margin: 15px auto;
+        padding:20px 20px;
+        position: relative;
+        @include verifyBackground();
+        background-position: 0 0 ;
+        .verify_slide_button{
+            @include verifyBackground();
+            position: absolute;
+            width: 66px;
+            height: 66px;
+            background-position: 0 -42px;
+            top: -13px;
+            left: -7px;
+            transform: translate(0,0);
+            cursor: pointer;
+        }
+        .active_button{
+            background-position: 0 -114px;
+        }
+    }
+    .verify_operate{
+
+    }
+}
