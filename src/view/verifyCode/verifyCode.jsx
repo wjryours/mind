@@ -34,48 +34,12 @@ class VerifyCode extends React.Component {
             this.initDrawClipImage()
             this.initDrawOriginImage()
             this.getPuzzleImage()
-            this.testArcImage()
         })
     }
     componentWillUnmount() {
         window.removeEventListener('mouseup', function () {
 
         })
-    }
-    testArcImage = () => {
-        const { originImageDom, puzzle } = this.state
-        let canvas = document.querySelector('.test_canvas')
-        let context = canvas.getContext('2d')
-        let { left, top, width, height } = puzzle
-        // context.drawImage(originImageDom, 0, 0)
-
-        context.beginPath()
-        context.moveTo(left, top)
-        context.lineTo(left + width / 4, top)
-        context.stroke()
-        // context.beginPath()
-        context.moveTo(left + width / 4 * 3, top)
-        context.arc(left + width / 2, top, width / 4, 0, Math.PI)
-        context.moveTo(left + width / 4 * 3, top)
-        context.lineTo(left + width, top)
-        context.lineTo(left + width, top + height / 4)
-        context.stroke()
-        context.arc(left + width, top + height / 2, width / 4, -Math.PI / 2, Math.PI / 2)
-        context.moveTo(left + width, top + height / 4 * 3)
-        context.lineTo(left + width, top + height)
-        context.lineTo(left, top + height)
-        context.lineTo(left, top + height / 4 * 3)
-        context.stroke()
-        // context.beginPath()
-        context.moveTo(left, top + height / 4)
-        context.arc(left, top + height / 2, width / 4, -Math.PI / 2, Math.PI / 2)
-        context.moveTo(left, top + height / 4)
-        context.lineTo(left, top)
-        context.stroke()
-
-        context.clip()
-
-        context.drawImage(originImageDom, 0, 0)
     }
     initOriginImageDom = (callback) => {
         let image = document.createElement('img')
@@ -201,7 +165,6 @@ class VerifyCode extends React.Component {
                     </div>
                     <div className="verify_operate"></div>
                 </div>
-                <canvas className="test_canvas" width="260px" height="195px" ></canvas>
             </div>
         )
     }
