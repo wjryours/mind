@@ -79,7 +79,7 @@ class VerifyCode extends React.Component {
     }
     initOriginImageDom = (callback) => {
         let image = document.createElement('img')
-        image.src = VerifyBg
+        image.src = `${VerifyBg}?new Date().getTime()`
         image.crossOrigin = ""
         image.onload = () => {
             this.setState({
