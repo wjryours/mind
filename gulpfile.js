@@ -3,8 +3,8 @@ const sftp = require('gulp-sftp')
 const fs = require('fs')
 const path = require('path')
 
-const remoteDir = '/root/static/example'
-const remoteStaticDir = '/root/static/example/static'
+const remoteDir = '/root/static/demo'
+const remoteStaticDir = '/root/static/demo/static'
 const remoteConf = require('./remoteConfig')
 function upload(localPath, conf) {
     return gulp.src(localPath).pipe(sftp(conf))

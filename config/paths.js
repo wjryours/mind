@@ -35,7 +35,7 @@ const getPublicUrl = appPackageJson =>
 function getServedPath(appPackageJson) {
   const publicUrl = getPublicUrl(appPackageJson);
   const servedUrl =
-    envPublicUrl || (publicUrl ? url.parse(publicUrl).pathname : '//static.wjryours.tech/example/');
+    envPublicUrl || (publicUrl ? url.parse(publicUrl).pathname : '//static.wjryours.tech/demo/');
   return ensureSlash(servedUrl, true);
 }
 
