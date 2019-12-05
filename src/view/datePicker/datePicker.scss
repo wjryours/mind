@@ -1,0 +1,160 @@
+.show_datepicker_content{
+    margin: 30px 50px;
+}
+@mixin arrowRight{
+    position: relative;
+    display: inline-block;
+    content: '';
+    width: 8px;
+    height: 8px;
+    border: 2px solid #aaa;
+    border-radius: 1px;
+    transform: rotate(-45deg) scale(0.8);
+    border-width: 0 2px 2px 0;
+}
+@mixin arrowLeft{
+    position: relative;
+    display: inline-block;
+    content: '';
+    width: 8px;
+    height: 8px;
+    border: 2px solid #aaa;
+    border-radius: 1px;
+    transform: rotate(-45deg) scale(0.8);
+    border-width: 2px 0 0 2px;
+}
+@mixin notCurrentMonth{
+    color: rgba(0,0,0,0.25)!important;
+    background: transparent;
+    border-color: transparent;
+    &:hover{
+        background: transparent;
+    }
+    &:active{
+        background: transparent;
+    }
+}
+.datepicker_wrapper{
+    position: relative;
+    width: 280px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-sizing: border-box;
+    .datepicker_input_wrap{
+        height: 34px;
+        padding: 6px 10px;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        align-items: center;
+        .datepicker_input{
+            width: 100%;
+            border: none;
+            outline: none;
+
+        }
+    }
+    .datepicker_panel_wrap{
+        .datepicker_panel_header{
+            position: relative;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #eee;
+            .datepicker_select{
+                color: rgba(0,0,0,0.85);
+            }
+            .datepicker_prev_year_btn{
+                position: absolute;
+                left: 10px;
+                cursor: pointer;
+                &::after{   
+                    @include arrowLeft;
+                }
+                &::before{   
+                    @include arrowLeft;
+                }
+            }
+            .datepicker_prev_month_btn{
+                position: absolute;
+                left: 40px;
+                cursor: pointer;
+                &::before{   
+                    @include arrowLeft;
+                }
+            }
+            .datepicker_next_month_btn{
+                position: absolute;
+                right: 40px;
+                cursor: pointer;
+                &::before{   
+                    @include arrowRight;
+                }
+            }
+            .datepicker_next_year_btn{
+                position: absolute;
+                right: 10px;
+                cursor: pointer;
+                &::after{   
+                    @include arrowRight;
+                }
+                &::before{   
+                    @include arrowRight;
+                }
+            }
+        }
+        .datepicker_panel_body{
+            padding: 8px 12px;
+            .datepicker_weekheader_body{
+                display: flex;
+                .datepicker_weekheader_cell{
+                    flex: 1;
+                    text-align: center;
+                    padding: 6px 0;
+                }
+            }
+            .datepicker_day_body{
+                
+                .datepicker_week_cell{
+                    display: flex;
+                    .datepicker_day_cell{
+                        flex: 1;
+                        text-align: center;
+                        padding: 5px 0;               
+                        cursor: pointer;
+                        .datepicker_day_date{
+                            margin: 0 6px;
+                            border: 1px solid transparent;
+                            &:hover{
+                                background: #e6f7ff;
+                            }
+                            &:active{
+                                color: #fff;
+                                background: #40a9ff;
+                            }
+                        }
+                        .datepicker_day_today{
+                            font-weight: bold;
+                            border-color:#1890ff;
+                            color: #1890ff;          
+                        }
+                        .datepicker_day_selected{
+                            background: #bae7ff;
+                            &:hover{
+                                background: #bae7ff;
+                            }
+                        }
+                        .datepicker_day_prev_month{
+                            @include notCurrentMonth;
+                        }
+                        .datepicker_day_next_month{
+                            @include notCurrentMonth;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}

@@ -3,7 +3,8 @@ import { List } from 'antd'
 import { Link } from 'react-router-dom'
 const ListData = [
     { router: '/mind', name: '思维导图' },
-    { router: '/verifycode', name: '图形验证码' }
+    { router: '/verifycode', name: '图形验证码' },
+    { router: '/datepicker', name: '仿antd日期选择器' }
 ]
 class Index extends React.Component {
     constructor(props) {
